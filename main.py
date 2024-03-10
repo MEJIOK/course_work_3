@@ -38,4 +38,6 @@ def print_operation(operation: dict) -> None:
 
 
 user_operations = get_operations('operations.json')
-[print_operation(op) for op in filter_exec_operations(user_operations, 5)]
+last_executed_operations = filter_exec_operations(user_operations, 5)
+for op in last_executed_operations[::-1]:  # Выводим в обратном порядке
+    print_operation(op)
